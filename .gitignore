@@ -1,0 +1,6 @@
+__pycache__/
+.eggs-info
+tests/
+src/amtguitools.egg-info/
+.pytest_cache/
+

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amtguitools"
+version = "0.1.0"
+description = "Guitar tablature transcription tools"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[project.optional-dependencies]
+# Only needed for `python -m amtguitools.data.adapters.guitarset download`
+
+download = ["mirdata"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: tests that need a real dataset on disk (deselect with -m 'not slow')",
+]
