@@ -60,8 +60,11 @@ def download(save_dir):
     """Download GuitarSet to save_dir using mirdata."""
     from mirdata.datasets import guitarset  # imported here so mirdata is only needed for downloading
 
-    guitarset.Dataset(data_home=save_dir).download(force_overwrite=True, cleanup=True)
-
+    guitarset.Dataset(data_home=save_dir).download(
+        partial_download=["annotations", "audio_mic", "index"],
+        force_overwrite=False,
+        cleanup=True,
+    )
 
 # ----------------------------------------------------------------------------
 # Track listing and metadata
