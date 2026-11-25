@@ -3,4 +3,4 @@ __pycache__/
 tests/
 src/amtguitools.egg-info/
 .pytest_cache/
-./data/
+data/*
